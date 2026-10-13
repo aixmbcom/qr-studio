@@ -1,227 +1,198 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/QR-Studio-06b6d4?style=for-the-badge&logo=qrcode&logoColor=white" alt="QR Studio" />
+  <img src="https://img.shields.io/badge/STDN-Studio-6366f1?style=for-the-badge&logo=qrcode&logoColor=white" alt="STDN Studio" />
   <br/>
-  <strong>The free, open-source QR code generator that doesn't suck.</strong>
+  <strong>专业品牌化二维码生成与解析平台</strong>
   <br/>
-  <sub>No sign-up. No watermarks. No tracking. No BS.</sub>
+  <sub>支持多类型数据嵌入、批量文件智能解析、艺术融合码与全功能扫码识别。</sub>
 </p>
 
+
 <p align="center">
-  <a href="https://deadboy18.github.io/qr-studio">
-    <img src="https://img.shields.io/badge/🔗_Live_Demo-06b6d4?style=for-the-badge" alt="Live Demo" />
+  <a href="https://github.com/marychobbs/qr-studio">
+    <img src="https://img.shields.io/badge/🔗_GitHub_仓库-4f46e5?style=for-the-badge&logo=github" alt="GitHub Repo" />
   </a>
   &nbsp;
   <img src="https://img.shields.io/badge/license-MIT-22c55e?style=for-the-badge" alt="License" />
   &nbsp;
-  <img src="https://img.shields.io/github/stars/deadboy18/qr-studio?style=for-the-badge&color=f59e0b" alt="Stars" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/dependencies-1-8b5cf6?style=for-the-badge" alt="Dependencies" />
+  <img src="https://img.shields.io/badge/dependencies-TailwindCSS_%7C_SheetJS_%7C_PDF.js-8b5cf6?style=for-the-badge" alt="Tech Stack" />
 </p>
 
----
-
-## What is QR Studio?
-
-QR Studio is a professional-grade QR code generator that runs entirely in your browser. It supports **11 data types** (including 🇲🇾 DuitNow), **ChromaCode image-blended mosaic codes**, a full **QR scanner with DuitNow EMV breakdown**, **live preview**, and exports to **PNG & SVG** — all from a single HTML file with zero backend.
-
-Most QR generators are bloated SaaS tools that paywall basic features, plaster watermarks on your codes, or require accounts just to download a PNG. QR Studio does none of that.
 
 ---
 
-## Features
+## 🚀 项目简介
 
-### Standard Mode
-- **11 Data Types** — URL, Text, WiFi, Email, Phone, SMS, WhatsApp, Location, Calendar Event, vCard, 🇲🇾 DuitNow
-- **Live Preview** — QR code updates instantly as you type, no "Generate" button needed
-- **Full Customization** — foreground/background colors, 7 presets, contrast warnings
-- **Center Logo Overlay** — upload any image as a center logo with automatic padding
-- **Stroke & Outline** — adjustable quiet zone and border options
-- **Holiday Templates** — Christmas, Halloween, New Year, Easter, Valentine's, St. Patrick's, Birthday frames
-- **WiFi Credential Display** — optionally bake SSID, password, and encryption type directly into the exported image
-- **Copyable Encoded Data** — every QR type shows the raw encoded string (mailto:, tel:, geo:, etc.) with a copy button
-- **180+ Country Codes** — flag emoji dropdowns on all phone fields with full international dialing codes
-- **Input Validation** — real-time validation on every field with clear error messages
-- **Resolution Control** — export at 256px, 512px, 1024px, or 2048px
-- **SVG Export** — infinitely scalable vector output for print
+**STDN Studio** 是一个功能强大、开箱即用的现代化专业二维码生成与解析平台。本项目采用纯前端架构设计，所有数据计算、文件解析及二维码渲染均在用户的本地浏览器中安全完成，无需依赖任何后端服务器。
 
-### 🇲🇾 DuitNow QR Generator
-- **EMV QR String Builder** — generates structurally valid DuitNow EMV QR codes per [PayNet QR Spec v1.5](https://docs.developer.paynet.my/docs/duitNow-QR/integration/QR-generation-specification/merchant-presented-mode/qr-data-object)
-- **70 Acquirers** — full dropdown of all banks, e-wallets, and payment providers from PayNet's official registry
-- **Auto CRC-16** — checksum calculated per ISO/IEC 13239, verified against all 4 PayNet spec examples
-- **DuitNow Branded Output** — renders in the official pink frame with "MALAYSIA NATIONAL QR" banner
-- **Static / Dynamic Toggle** — choose between reusable (11) or one-time (12) QR codes
-- **MCC Categories** — 25+ common merchant category codes
-- **Additional Data Fields** — reference label, terminal, bill number, store label
-
-> ⚠️ **Note:** Generated QR codes have correct EMV format and CRC but **won't process real payments** — the Merchant/QR ID must be registered with an acquirer bank through PayNet. This is useful for developers testing EMV parsers or learning how DuitNow QR is structured. See [natsu90's research](https://github.com/natsu90/emvqr/issues/1).
-
-### ChromaCode Mode
-- **Image-Blended Mosaic QR** — QR codes that visually incorporate a brand image while remaining scannable
-- **Auto Favicon Fetch** — enter a URL and ChromaCode automatically pulls the site's favicon
-- **Upload or Image URL** — use any image as the brand source
-- **5 Version Carousel** — preview and compare QR versions 7, 10, 13, 15, and 18
-- **Advanced Tuning** — dot shape (circle/rounded/square), dark dot range, ghost strength, ghost threshold
-- **Auto-Tune** — intelligently adjusts parameters based on image characteristics
-- **Palette Extraction** — extracts and displays the dominant colors from the source image
-
-### 🇲🇾 Scanner — DuitNow QR Breakdown
-- **Camera, File & Paste** — scan QR codes via camera, image upload, or clipboard paste
-- **DuitNow EMV Decoder** — full field-by-field breakdown of DuitNow and JomPAY QR codes
-- **70 Acquirer Lookup** — identifies banks/wallets by Acquirer ID from [PayNet's official list](https://docs.developer.paynet.my/docs/duitNow-QR/integration/QR-generation-specification/merchant-presented-mode/qr-data-object#acquirer-id-id-01)
-- **CRC-16 Verification** — validates checksum with ✓ Valid / ✕ Invalid and expected value on mismatch
-- **300+ MCC Codes** — human-readable merchant category labels
-- **JomPAY Detection** — identifies JomPAY QR codes (acquirer 898989) and shows Biller Code
-- **Tip & Convenience Fee** — decodes EMV IDs 55, 56, 57
-- **Merchant Channel Decoding** — decodes the 3-character field (ID 62.11) into media type, transaction location, and merchant presence per PayNet Tables 3–5
-- **Data Integrity Check** — displays SHA-256 hash (ID 82) when present
-- **Language Template** — shows alternate language merchant name/city (ID 64)
-- **Additional Data Fields** — bill number, mobile, store label, loyalty, reference, customer label, terminal, purpose, consumer data request, merchant tax ID, RRN (Ref-1/Ref-2), geo coordinates
-- **22 Currency Codes** — MYR, USD, SGD, THB, IDR, CNY, GBP, EUR, JPY, AUD, HKD, KRW, and more
-- **Regenerate Clean QR** — rebuild a scannable DuitNow-branded QR from decoded data with adjustable print sizes (sticker → A4) and font size controls for merchant name & bank
-- **QR Safety Analysis** — flags suspicious URLs, warns on open WiFi, crypto addresses, and payment QR codes
-
-### General
-- **Dark / Light Theme** — with persistent preference
-- **Mobile-First Responsive** — works perfectly on phones, tablets, and desktops
-- **Share API** — native sharing on supported devices
-- **Single HTML File** — the entire app is one file, no build step, no framework, no node_modules
-- **Privacy-First** — everything runs client-side; your data never leaves your browser
-- **Easter Eggs** — 👀 _open the console if you're curious_
+无论您是需要制作带有品牌 Logo 与精美海报边框的营销码、通过上传 Excel / Word / PDF / TXT 批量生成产品批次二维码，还是进行实时扫码与文档解析，STDN Studio 都能为您提供极致的体验。
 
 ---
 
-## Quick Start
+## ✨ 核心功能特性
 
-### Option 1: Just use it
-Visit **[deadboy18.github.io/qr-studio](https://deadboy18.github.io/qr-studio)** — that's it.
+### 1. 丰富的数据类型支持 (Data Types)
 
-### Option 2: Self-host
+* **网络与基础**：网址 (URL)、纯文本 (Text)、电子邮箱 (Email)、电话 (Phone)、短信 (SMS)。
+* **商务与便民**：
+  * **电子名片 (vCard)**：一键将姓名、电话、公司、职位及邮箱存入手机通讯录。
+  * **WiFi 快捷连接**：内嵌网络名称与密码，扫码免密直连。
+  * **地理位置 (Geo)**：内嵌经纬度与位置描述，一键拉起地图导航。
+  * **社交/社群 (Social)**：支持微信、钉钉、WhatsApp、领英等快捷跳转。
+  * **日历事件 (iCal)**：一键将日程活动加入手机日历。
+  * **应用下载 (App Store / Google Play)**：智能识别设备系统跳转。
+
+### 2. 多格式文件批量解析与二维码生成 (Batch & File Import)
+
+* 支持**批量文本**多行输入，毫秒级实时生成多个独立二维码预览及下载。
+* **多格式文件智能导入与提取**：
+  * **Excel (.xlsx / .xls)**：自动解析表格单元格提取文本源（基于 `SheetJS`）。
+  * **Word (.docx)**：精准提取文档原生文本（基于 `Mammoth.js`）。
+  * **PDF 文档**：多页文字安全提取与转换（基于 `PDF.js`）。
+  * **TXT 纯文本**：按行自动拆分批量生成。
+
+### 3. 品牌美化与海报模板 (Styling & Posters)
+
+* **码点形状定制**：支持经典方形、圆角矩形、圆点阵列、晶体菱形、动态胶囊、潮流十字及纵横条纹等多种风格。
+* **中心 Logo 嵌入**：支持自定义上传品牌 Logo 图标，并自带防遮挡白色保护遮罩。
+* **海报边框与自定义文字**：提供丰富的边框预设模板（商务简约、节日预设等），支持独立可调节的顶部标语与底部说明，支持自定义字号、字重,、颜色及多达几十种中英文字体。
+
+### 4. ChromaCode 艺术融合码 (Art Fusion)
+
+* 支持上传自定义背景画布图片，自由调节背景清晰度与矩阵逻辑无缝融合，生成高视觉冲击力的艺术二维码。
+
+### 5. 实时扫码与文件识别 (Scanner & Decoder)
+
+* 支持开启设备摄像头进行实时视频流扫码识别（基于 `jsQR`）。
+* 支持本地上传二维码图片进行精准解析与内容提取。
+
+---
+
+## 快速开始
+
+### 选项 1：直接使用
+
+访问 **[marychobbs.github.io/qr-studio](https://github.com/marychobbs/qr-studio)** — 即刻体验。
+
+### 选项 2：私有化部署 (Self-host)
+
 ```bash
-git clone https://github.com/deadboy18/qr-studio.git
+git clone [https://github.com/marychobbs/qr-studio.git](https://github.com/marychobbs/qr-studio.git)
 cd qr-studio
-# Open index.html in any browser. Done.
+# 在任意浏览器中打开 index.html 即可。
 ```
 
-No dependencies to install. No build step. No configuration.
+无需安装任何依赖。无需构建步骤。无需繁琐配置。
 
-```
 qr-studio/
-├── index.html     ← the entire app (single file)
-├── worker.js      ← Cloudflare Worker for ChromaCode favicon proxy (optional)
-├── README.md
-└── LICENSE
-```
+├── index.html   ← 整个应用（单文件）
+├── worker.js   ← 用于 ChromaCode 网站图标代理的 Cloudflare Worker（可选）[cite: 1, 2]
+├── README.md  [cite: 1, 2]
+└── LICENSE    [cite: 1, 2]
 
-### Option 3: Deploy to GitHub Pages
-1. Fork this repository
-2. Go to **Settings → Pages**
-3. Under **Source**, select `main` branch and `/ (root)` folder
-4. Click **Save**
-5. Your QR Studio is live at `https://<your-username>.github.io/qr-studio`
 
----
 
-## Tech Stack
+### **选项 3：部署到 GitHub Pages**
 
-| Layer | Technology |
-|-------|-----------|
-| **Markup & Logic** | Vanilla HTML, CSS, JavaScript |
-| **QR Engine** | [qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator) (1.4.4) |
-| **QR Scanner** | [jsQR](https://github.com/cozmo/jsQR) (1.4.0, lazy-loaded) |
-| **ChromaCode Algorithm** | [Toms Nimanis / IT Linden](https://github.com/TomsNimanis/chromacode) |
-| **DuitNow EMV Spec** | [PayNet QR Spec v1.5](https://docs.developer.paynet.my/docs/duitNow-QR/integration/QR-generation-specification/merchant-presented-mode/qr-data-object) |
-| **DuitNow Research** | [natsu90](https://github.com/natsu90/duitnowqr-test) |
-| **Typography** | DM Sans + JetBrains Mono (Google Fonts) |
-| **Build System** | None. It's one file. |
-| **Backend** | None. It's client-side. |
-| **CORS Proxy** | [Cloudflare Worker](https://workers.cloudflare.com) (optional, for ChromaCode favicons) |
-| **Tracking** | None. We respect your privacy. |
+1. Fork 本仓库
 
----
+2. 前往 **Settings → Pages**
 
-## Supported QR Types
+   
 
-| Type | Encoded Format | Example |
-|------|---------------|---------|
-| **URL** | `https://example.com` | Website links |
-| **Text** | Raw text | Messages, notes |
-| **WiFi** | `WIFI:T:WPA;S:MyNet;P:pass123;;` | Auto-connect to networks |
-| **Email** | `mailto:hi@example.com?subject=...` | Pre-filled emails |
-| **Phone** | `tel:+15551234567` | Click-to-call |
-| **SMS** | `sms:+15551234567?body=...` | Pre-filled text messages |
-| **WhatsApp** | `https://wa.me/15551234567?text=...` | Direct WhatsApp chats |
-| **Location** | `geo:48.8584,2.2945` | Maps & coordinates |
-| **Calendar** | iCalendar (`.ics`) format | Events with time, location |
-| **vCard** | vCard 3.0 format | Full contact cards |
-| **🇲🇾 DuitNow** | EMV QR (TLV) format | DuitNow payment QR codes |
+3. 在 **Source** 下方，选择 main 分支和 / (root) 根目录
 
----
+4. 点击 **Save**
 
-## ChromaCode Favicon Proxy (Optional)
+   
 
-ChromaCode's **Favicon** tab auto-fetches site icons to blend into the QR code. Because browsers block cross-origin image requests (CORS), this requires a proxy. Without one, the **Upload** and **Image URL** tabs still work perfectly.
+5. 您的项目将发布在 https://<你的用户名>.github.io/qr-studio
 
-A free [Cloudflare Worker](https://workers.cloudflare.com) acts as your own personal CORS proxy (100,000 requests/day free).
+   
 
-### Setup (2 minutes)
+## **技术栈**
 
-1. Sign up at [workers.cloudflare.com](https://workers.cloudflare.com) (free)
-2. Click **Create Worker** → **Start with Hello World!**
-3. Name it `qr-proxy`
-4. Click **Edit Code**, delete everything, paste the contents of [`worker.js`](worker.js)
-5. Click **Deploy**
-6. Test it — visit your worker URL with a test favicon:
-   ```
-   https://qr-proxy.YOUR-SUBDOMAIN.workers.dev/?url=https://www.google.com/favicon.ico
-   ```
-   You should see the Google favicon image.
-7. Open `index.html`, find this line and set your worker URL:
-   ```javascript
-   const MY_PROXY = ''; // ← paste your worker URL here
-   ```
-   ```javascript
-   const MY_PROXY = 'https://qr-proxy.YOUR-SUBDOMAIN.workers.dev';
-   ```
-8. Push to GitHub — done. ChromaCode favicon fetching now works for any site.
+| **层级**       | **技术**                                                     |
+| -------------- | ------------------------------------------------------------ |
+| **标记与逻辑** | 原生 HTML、Tailwind CSS、JavaScript                          |
+| **二维码引擎** | [qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator) (1.4.4) |
+| **二维码扫描** | [jsQR](https://github.com/cozmo/jsQR) (1.4.0，懒加载)        |
+| **文件解析库** | SheetJS (xlsx) + Mammoth.js + PDF.js                         |
+| **构建系统**   | 无。只有一个文件。                                           |
+| **后端**       | 无。纯客户端运行。                                           |
+| **CORS 代理**  | [Cloudflare Worker](https://workers.cloudflare.com)（可选，用于 ChromaCode 网站图标代理） |
+| **追踪统计**   | 无。我们严格尊重您的隐私。                                   |
 
-### Without the proxy
+## **支持的二维码类型**
 
-Public CORS proxies (`allorigins.win`, `codetabs.com`) are used as fallbacks. They work for most sites but may be slow or block certain domains. The Upload tab always works regardless.
+| **类型**             | **编码格式**                      | **示例**                 |
+| -------------------- | --------------------------------- | ------------------------ |
+| **网址 (URL)**       | https://example.com               | 网站链接                 |
+| **文本 (Text)**      | 原始文本                          | 消息、便签               |
+| **WiFi**             | WIFI:T:WPA;S:MyNet;P:pass123;;    | 自动连接网络             |
+| **电子名片 (vCard)** | vCard 3.0 格式                    | 完整的个人名片卡片       |
+| **地理位置 (Geo)**   | geo:48.8584,2.2945                | 地图与坐标               |
+| **社交/社群**        | 平台链接 / 账号 ID                | 微信、钉钉、WhatsApp 等  |
+| **日历事件**         | iCalendar (.ics) 格式             | 包含时间、地点的日程活动 |
+| **应用下载**         | App Store / Google Play 链接      | 智能设备系统跳转         |
+| **邮箱 (Email)**     | mailto:hi@example.com?subject=... | 预填邮件                 |
+| **电话 (Phone)**     | tel:+15551234567                  | 点击拨打电话             |
+| **短信 (SMS)**       | sms:+15551234567?body=...         | 预填短信内容             |
 
----
+## **ChromaCode 网站图标代理配置（可选）**
 
-## Contributing
+ChromaCode 的 **Favicon**（网站图标）标签页会自动获取网站图标并将其融合进二维码中。由于浏览器会阻止跨域图片请求（CORS），因此这需要一个代理。如果没有配置代理，**Upload**（上传）和 **Image URL**（图片链接）标签页依然可以完美工作。
 
-Contributions are welcome! If you have ideas for new features, find bugs, or want to improve the code:
+您可以使用免费的 [Cloudflare Worker](https://workers.cloudflare.com) 搭建属于您自己的个人 CORS 代理（免费层每天可提供 100,000 次请求）。
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-thing`)
-3. Commit your changes (`git commit -m 'Add amazing thing'`)
-4. Push to the branch (`git push origin feature/amazing-thing`)
-5. Open a Pull Request
+### **部署步骤参考（基于 worker.js）**
 
-Since the entire app is a single HTML file, contributing is as simple as editing one file — no complex project structure to navigate.
+：
 
----
+1. 注册并登录 [workers.cloudflare.com](https://workers.cloudflare.com)（免费）
 
-## Credits
+2. 点击 **Create Worker**（创建 Worker）→ **Start with Hello World!**（从 Hello World 开始）
 
-**Created by [deadboy18](https://github.com/deadboy18)**
+3. 将其命名为 qr-proxy
 
-ChromaCode algorithm by [Toms Nimanis / IT Linden](https://github.com/TomsNimanis/chromacode)
+   
 
-DuitNow EMV research by [natsu90](https://github.com/natsu90/duitnowqr-test) · Acquirer data from [PayNet QR Spec v1.5](https://docs.developer.paynet.my/docs/duitNow-QR/integration/QR-generation-specification/merchant-presented-mode/qr-data-object) · [PayNet Developer Docs](https://docs.developer.paynet.my/docs)
+4. 点击 **Edit Code**（编辑代码），清空所有默认内容，并将 [worker.js](https://www.google.com/search?q=worker.js) 中的完整代码粘贴进去[cite: 1, 2]
 
-Special thanks to [VenimK](https://github.com/VenimK) ❤️
+5. 点击 **Deploy**（部署）
 
----
+6. 进行测试 —— 通过浏览器访问您的 worker 地址并附带一个测试图标链接：
+   [https://qr-proxy.你的子域名.workers.dev/?url=https://www.google.com/favicon.ico](https://qr-proxy.你的子域名.workers.dev/?url=https://www.google.com/favicon.ico)
 
-## License
+   如果配置成功，您应当能看到 Google 的网站图标。
 
-This project is open source and available under the [MIT License](LICENSE).
+7. 打开 index.html，找到以下这一行代码，并将您的 worker 地址填入其中：
+   JavaScript
+   const MY_PROXY = ''; // ← 在此处粘贴您的 worker URL
 
----
+   修改为：
+   JavaScript
+   const MY_PROXY = '[https://qr-proxy.你的子域名.workers.dev](https://qr-proxy.你的子域名.workers.dev)';
 
-<p align="center">
-  <sub>If this tool saved you from paying $15/month for a QR code generator, consider giving it a ⭐</sub>
-</p>
+   
+
+8. 推送代码到 GitHub —— 大功告成。现在 ChromaCode 的网站图标自动获取功能已对所有网站生效。
+
+### **无代理模式**
+
+公共 CORS 代理（如 allorigins.win、codetabs.com）在代码中被用作备用方案。它们适用于大多数网站，但有时可能会较慢或阻止某些特定域名。而“上传”标签页则不受影响，任何时候都可以正常使用[cite: 1]。
+
+## **参与贡献**
+
+欢迎提交贡献！如果您对新功能有好的想法、发现了漏洞，或是想要改进代码[cite: 1]：
+
+1. Fork 本仓库[cite: 1]
+2. 创建您的特性分支 (git checkout -b feature/amazing-thing)[cite: 1]
+3. 提交您的修改 (git commit -m 'Add amazing thing')[cite: 1]
+4. 推送到该分支 (git push origin feature/amazing-thing)[cite: 1]
+5. 开启 Pull Request[cite: 1]
+
+由于整个应用仅仅是一个单 HTML 文件，贡献代码就像编辑单个文件一样简单 —— 无需面对复杂的项目目录结构[cite: 1]。
+
+## **开源许可证**
+
+本项目基于开源的 [MIT License](https://www.google.com/search?q=LICENSE) 协议进行分发与使用[cite: 1]。
